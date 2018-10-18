@@ -7,13 +7,13 @@ class AddressBook{
     }
     //Methods
     add(info){
-        this.contacts.push(info);
+        this.contacts.push(info);       // Adds contact info to array
     }
     deleteAt(index){
-        this.contacts.splice(this.contacts.indexOf(index, 1));
+        this.contacts.splice(index, 1); // Deletes desired contact from array
     }
     print(){
-        console.log(this.contacts);
+        console.log(this.contacts);     // Prints all contacts
     }
 }
 //class Contact
@@ -26,18 +26,19 @@ class Contact{
     }
 }
 
-let addressBook = new AddressBook();
+let addressBook = new AddressBook(); //creates an instance of AddressBook();
 while(true){
     let choice = prompt("Would you like to add, delete, print, or quit");
-    if(choice === "add"){
+    if(choice === "add"){                                            
         let name = prompt("Enter a name");
         let email = prompt("Enter an email");
-        let phone = prompt("Enter a phone number");
+        let phone = prompt("Enter a phone number");                      //loops the user through inputting their contact information
         let relation = prompt("Enter your relation to the contact");
-        addressBook.add(new Contact(name, email, phone, relation));
+        let info = new Contact(name, email, phone, relation);
+        addressBook.add(info);
     }else if(choice==="delete"){
-        let indexnum = prompt("What index do you want to delete?");
-        addressBook.deleteAt(indexnum);
+        let index = prompt("What index do you want to delete?");
+        addressBook.deleteAt(index);
     }else if(choice ==="print"){
         addressBook.print();
     }
