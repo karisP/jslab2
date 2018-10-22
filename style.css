@@ -1,0 +1,70 @@
+*{
+    font-family: 'Maven Pro', sans-serif;
+    
+  
+}
+ 
+body{
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(addressbg.jpg);
+    background-size: cover;
+}
+
+.parent{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.container{
+    height: 65%;
+}
+
+.form{
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(179,178,176, 0.6);
+    border-radius: 5px;
+    width: 50%;
+    height: 100%;
+    
+}
+h1{
+    color: #fff;
+    padding: 5%;
+}
+/* input{ 
+    border-radius: 5px;
+    background-color: #fff;
+    width: 600px;
+    padding: 10px;
+    margin: 1%;
+    border: none;
+}*/
+input,button{
+    border-radius: 5px;
+    background-color: #fff;
+    width:624px;
+    padding: 10px;
+    margin: 1%;
+    border: none;
+}
+
+.dom-container{
+    height: 30%;
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.style{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px; 
+    background-color:rgba(255,255,255,0.8);
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+

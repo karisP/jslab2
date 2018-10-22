@@ -1,24 +1,32 @@
 "use strict";
 
 //class Address Book
-class AddressBook{
-    constructor(){
+class AddressBook {
+    constructor() {
         this.contacts = [];
     }
     //Methods
-    add(info){
+    add(info) {
         this.contacts.push(info);       // Adds contact info to array
     }
-    deleteAt(index){
+    deleteAt(index) {
         this.contacts.splice(index, 1); // Deletes desired contact from array
     }
-    print(){
-        console.log(this.contacts);     // Prints all contacts
-    }
+    display(contacts){
+        const container = document.querySelector(".dom-container");                     //Selected the bottom of the page container
+        container.innerHTML = "";                                                       //clears the page
+        for (let contact of contacts) {                                                 //loops through the array and creates a container for the information
+            let div = document.createElement("div");
+            div.innerHTML = ` <div class = "style"> Name: ${contact.name} <br> Email: ${contact.email} <br> Phone: ${contact.phone} <br> Relation: ${contact.relation}</div> `;
+            container.appendChild(div);
+        }
+    
+    };
+
 }
 //class Contact
-class Contact{
-    constructor(name, email, phone, relation){
+class Contact {
+    constructor(name, email, phone, relation) {
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -27,23 +35,30 @@ class Contact{
 }
 
 let addressBook = new AddressBook(); //creates an instance of AddressBook();
-while(true){
-    let choice = prompt("Would you like to add, delete, print, or quit");
-    if(choice === "add"){                                            
-        let name = prompt("Enter a name");
-        let email = prompt("Enter an email");
-        let phone = prompt("Enter a phone number");                      //loops the user through inputting their contact information
-        let relation = prompt("Enter your relation to the contact");
+
+
+//Create an event for the delete btn
+// document.querySelector("#delete-btn")
+//     .addEventListener("click", () => {
+//  
+//         addressBook.deleteAt(index);
+//         addressBook.display(addressBook.contacts);
+//     });
+
+
+//Create an event for the add btn
+document.querySelector("#add-btn")
+    .addEventListener("click", () => {
+        const inputs = document.querySelectorAll(".item-input");
+        let name = inputs[0].value;
+        let email = inputs[1].value;
+        let phone = inputs[2].value;
+        let relation = inputs[3].value;
         let info = new Contact(name, email, phone, relation);
         addressBook.add(info);
-    }else if(choice==="delete"){
-        let index = prompt("What index do you want to delete?");
-        addressBook.deleteAt(index);
-    }else if(choice ==="print"){
-        addressBook.print();
-    }
-    else if (choice==="quit"){
-        break;
-    }
+        addressBook.display(addressBook.contacts);
+    });
 
-}
+
+
+

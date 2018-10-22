@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        
-        
-        <script src="script.js" async defer></script>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+</head>
+
+<body>
+    <section class="parent container">
+        <form class="parent form" action="">
+            <h1>My Contacts</h1>
+            <input class="item-input" type="text" placeholder="Name">
+            <input class="item-input" type="text" placeholder="Email">
+            <input class="item-input" type="text" placeholder="Phone">
+            <input class="item-input" list="relation" type="text" placeholder="Relation">
+            <datalist id="relation">
+                <option value="Friend">
+                <option value="Parent">
+                <option value="Sibling">
+                <option value="Coworker">
+                <option value="Significant Other">
+            </datalist>
+            <button type="button" id="add-btn">Add</button>
+        </form>
+    </section>
+    <section class="dom-container">
+
+    </section>
+    <script src="script.js" async defer></script>
+</body>
+
 </html>
